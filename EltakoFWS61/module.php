@@ -1,5 +1,5 @@
 <?php
-	class EltakoFWS61 extends IPSModule
+	class EltakoFWS extends IPSModule
 	{
 		#=====================================================================================
 		public function Create() 

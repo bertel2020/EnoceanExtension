@@ -1,0 +1,15 @@
+{
+	"id": "{AA873B27-CF88-9BE7-7AE8-8ACBA0D7897F}",
+	"name": "Eltako FUTH",
+	"type": 3,
+	"vendor": "Eltako",
+	"aliases": 
+	[
+		"Eltako FUTH55D",
+		"Eltako FUTH65D"
+	],
+	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
+	"childRequirements": [],
+	"implemented": ["{DE2DA2C0-7A28-4D23-A9AA-6D1C7609C7EC}"],
+	"prefix": "ENOEXT"
+}

@@ -1,0 +1,17 @@
+{
+	"id": "{5B4229AD-B420-44DB-1757-D1635D05DE14}",
+	"name": "Eltako FBH",
+	"type": 3,
+	"vendor": "Eltako",
+	"aliases": 
+	[
+		"Eltako FABH65S",
+		"Eltako FBH65",
+		"Eltako FBH65S",
+		"Eltako FBH55"
+	],
+	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
+	"childRequirements": [],
+	"implemented": ["{DE2DA2C0-7A28-4D23-A9AA-6D1C7609C7EC}"],
+	"prefix": "ENOEXT"
+}

@@ -2,10 +2,10 @@
 	"id": "{CFDF6B9D-53E6-AB70-29CC-D705F8AB73B4}",
 	"author": "Bertel2013",
 	"name": "EnoceanExtension",
-	"url": "",
+	"url": "https://github.com/bertel2020/EnoceanExtension",
 	"version": "0.1",
     "compatibility": {
-        "version": "7.0"
+        "version": "6.3"
     },
 	"build": 0,
 	"date": 0

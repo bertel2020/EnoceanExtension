@@ -1,0 +1,18 @@
+{
+	"id": "{C2375289-EFE4-1C83-F2E4-B622E4B08A9F}",
+	"name": "EltakoFCO2TF",
+	"type": 3,
+	"vendor": "Eltako",
+	"aliases": 
+	[
+		"Eltako FCO2TF",
+		"Eltako FCO2TF65",
+		"Eltako FCO2TS"
+	],
+	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
+	"childRequirements": [],
+	"implemented": ["{DE2DA2C0-7A28-4D23-A9AA-6D1C7609C7EC}"],
+	"prefix": "ENOEXT",
+	"url": ""
+
+}

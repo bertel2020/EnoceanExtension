@@ -18,20 +18,6 @@
 
 
 			#	Fehlende Profile erzeugen
-			if (!IPS_VariableProfileExists('Voltage.ENOEXT')) {
-				IPS_CreateVariableProfile('Voltage.ENOEXT', 2);
-				IPS_SetVariableProfileIcon('Voltage.ENOEXT', 'Electricity');
-				IPS_SetVariableProfileDigits('Voltage.ENOEXT', 2);
-				IPS_SetVariableProfileValues('Voltage.ENOEXT', 0, 5, 0.02);
-				IPS_SetVariableProfileText('Voltage.ENOEXT', '', ' V');
-			}
-			if (!IPS_VariableProfileExists('Illumination.ENOEXT')) {
-				IPS_CreateVariableProfile('Illumination.ENOEXT', 2);
-				IPS_SetVariableProfileIcon('Illumination.ENOEXT', 'Sun');
-				IPS_SetVariableProfileDigits('Illumination.ENOEXT', 0);
-				IPS_SetVariableProfileValues('Illumination.ENOEXT', 0, 512, 1);
-				IPS_SetVariableProfileText('Illumination.ENOEXT', '', ' lx');
-			}
 
 		}
 
@@ -51,9 +37,9 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableBoolean('Motion', $this->Translate('Motion'), "~Motion");
-			$this->RegisterVariableFloat('BatteryVoltage', $this->Translate('Battery Voltage'), "Voltage.ENOEXT");
-			$this->RegisterVariableFloat('Illumination', $this->Translate('Illumination'), "Illumination.ENOEXT");
+			$this->RegisterVariableInteger('Humidity', $this->Translate('Humidity'), "~Humidity");
+			$this->RegisterVariableInteger('Concentration', $this->Translate('Concentration'), "~Occurence.CO2");
+			$this->RegisterVariableFloat('Temperature', $this->Translate('Temperature'), "~Temperature.Room");
 
 			#	Filter setzen
 			$this->SetFilter();
@@ -70,17 +56,9 @@
 
 	        switch($data->Device) {
 	            case "165":
-					$this->SetValue('Illumination', (int)$data->DataByte2 * *2048/255);
-					$this->SetValue('BatteryVoltage', (int)$data->DataByte3 * 0.02);
-					switch($data->DataByte0) {
-						case 13:
-							$this->SetValue('Motion', true);
-							break;
-						case 15:
-							$this->SetValue('Motion', false);
-							break;
-						default:
-					}
+					$this->SetValue('Humidity', (int)$data->DataByte3 * 0.5);
+					$this->SetValue('Concentration', (int)$data->DataByte2 * 10);
+					$this->SetValue('Temperature', (int)$data->DataByte1 * 0.2);
 	                break;
 	            default:
 					$this->LogMessage("Unknown Message", KL_ERROR);

@@ -6,9 +6,9 @@
 			"Find ReturnID": "Suche Geräte-ID",
 			"apply": "übernehmen",
 			"please operate device": "Bitte Gerät bedienen",
-			"Battery Voltage": "Batteriespannung",
-			"Motion": "Bewegung",
-			"Illumination": "Helligkeit"
+			"Concentration": "CO2",
+			"Temperature": "Temperatur",
+			"Humidity": "Luftfeuchtigkeit"
 		}
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"id": "{5A9496B0-6E66-E64A-5C78-DAD010C1C517}",
-	"name": "EltakoFBH",
+	"name": "Eltako FBH",
 	"type": 3,
 	"vendor": "Eltako",
 	"aliases": 
@@ -13,5 +13,6 @@
 	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
 	"childRequirements": [],
 	"implemented": ["{DE2DA2C0-7A28-4D23-A9AA-6D1C7609C7EC}"],
-	"prefix": "ENOEXT"
+	"prefix": "ENOEXT",
+	"url": ""
 }

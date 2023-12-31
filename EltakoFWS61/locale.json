@@ -1,0 +1,18 @@
+{
+	"translations": {
+		"de": { 
+			"ReturnID": "Geräte-ID",
+			"InstanceID": "InstanzID",
+			"Find ReturnID": "Suche Geräte-ID",
+			"apply": "übernehmen",
+			"please operate device": "Bitte Gerät bedienen",
+			"Temperature": "Temperatur",
+			"Wind": "Wind",
+			"Dawn": "Dämmerung",
+			"SunWest": "Sonnenwert West",
+			"SunSouth": "Sonnenwert Süd",
+			"SunEast": "Sonnenwert Ost",
+			"Rain": "Regen"
+		}
+	}
+}

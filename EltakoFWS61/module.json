@@ -1,0 +1,17 @@
+{
+	"id": "{CD95ABE0-6978-80CB-2A26-1326997396A3}",
+	"name": "Eltako FWS61",
+	"type": 3,
+	"vendor": "Eltako",
+	"aliases": 
+	[
+		"Eltako FWS61",
+		"Eltako FWG14MS"
+	],
+	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
+	"childRequirements": [],
+	"implemented": ["{DE2DA2C0-7A28-4D23-A9AA-6D1C7609C7EC}"],
+	"prefix": "ENOEXT",
+	"url": ""
+
+}

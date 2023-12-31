@@ -1,5 +1,5 @@
 <?php
-	class ENOEXTEltakoFBH extends IPSModule
+	class EltakoFBH extends IPSModule
 	{
 		#=====================================================================================
 		public function Create() 

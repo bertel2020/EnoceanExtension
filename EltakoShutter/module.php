@@ -1,5 +1,5 @@
 <?php
-	class ENOEXTEltakoShutter extends IPSModule
+	class EltakoShutter extends IPSModule
 	{
 		#================================================================================================
 		public function Create()

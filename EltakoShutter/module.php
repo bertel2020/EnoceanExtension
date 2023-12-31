@@ -163,10 +163,10 @@
 					if($this->ReadPropertyFloat("SlatTurnTime") > 0){
 						if($dir >0){
 							$dtSlat = (100 - $this->GetValue("slatangle")) / 100 * $this->ReadPropertyFloat("SlatTurnTime");
-							$this->SetValue("state", "Moved down");
+							$this->SetValue("state", $this->Translate("Moved down"));
 						}else{
 							$dtSlat = -$this->GetValue("slatangle") / 100 * $this->ReadPropertyFloat("SlatTurnTime");
-							$this->SetValue("state", "Moved up");
+							$this->SetValue("state", $this->Translate("Moved up"));
 						}
 
 						#	Lamellenwinkel und Position?
@@ -207,17 +207,17 @@
 						case 1:
 							$this->SetValue("action", -1);
 							$this->SetTimerInterval('UpdateTimer', 1000);
-							$this->SetValue("state", "Start up");
+							$this->SetValue("state",  $this->Translate("Start up"));
 						    break;
 						case 2:
 							$this->SetValue("action", 1);
 							$this->SetTimerInterval('UpdateTimer', 1000);
-							$this->SetValue("state", "Start down");
+							$this->SetValue("state", $this->Translate("Start down"));
 						    break;
 						case 80:
 							$this->SetValue("action", 0);
 							$this->SetValue("position", 100);
-							$this->SetValue("state", "Final position down");
+							$this->SetValue("state", $this->Translate("Final position down"));
 							$DownTime = $this->ReadPropertyFloat("DownTime");
 							if($this->ReadPropertyBoolean("TurnWithoutTravel"))$DownTime -= $this->ReadPropertyFloat("SlatTurnTime");
 							$this->SetValue("movetime", $DownTime);
@@ -227,7 +227,7 @@
 							$this->SetValue("action", 0);
 							$this->SetValue("position", 0);
 							$this->SetValue("movetime", 0);
-							$this->SetValue("state", "Final position up");
+							$this->SetValue("state", $this->Translate("Final position up"));
 							if($this->ReadPropertyFloat("SlatTurnTime") > 0)$this->SetValue("slatangle", 0);
 						    break;
 						default:

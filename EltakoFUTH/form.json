@@ -126,7 +126,7 @@
 		
 		{ "type": "Label", "caption": "1. fill in the DeviceID above" },
 		{ "type": "Label", "caption": "2. press TEACHIN after activating the learnmode on your device" },
-        { "type": "Button", "label": "teachin", "onClick": "MEF_TeachIn($id);" },
+        { "type": "Button", "label": "teachin", "onClick": "ENOEXT_TeachIn($id);" },
 		{ "type": "Label", "caption": "__________________________________________________________________________" },
 		{ "type": "TestCenter"	}
     ]

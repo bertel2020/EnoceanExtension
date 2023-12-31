@@ -139,24 +139,21 @@
     	                $this->SwitchNormal(false);
     	            }
     	            break;
-    	        case "SetReturnID":
-					$this->UpdateFormField('ReturnID', 'value', $Value);
-					break;
     	        default:
     	            throw new Exception("Invalid Ident");
     	    }
     	}
 
 		#================================================================================================
-		public function TeachIn() //Sendet ein TeachIn als "GFVS" an den Aktor
+		public function TeachIn() //Sendet ein TeachIn als "GFVS" an den FUTH
 		#================================================================================================
 		{
 			$data = json_decode($this->ReadPropertyString("BaseData"));
 			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
-			$data->DataByte3 = 224;
-			$data->DataByte2 = 64;
+			$data->DataByte3 = 64;
+			$data->DataByte2 = 48;
 			$data->DataByte1 = 13;
-			$data->DataByte0 = 128;
+			$data->DataByte0 = 133;
 			$data->DestinationID = $this->GetID();
 			$this->SendData(json_encode($data));
 		}

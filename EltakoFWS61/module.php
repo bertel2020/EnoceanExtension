@@ -76,7 +76,7 @@
 							$temp = round((-40 + $temp)*2)/2;
 							$this->SetValue('Temperature', $temp); 
 						}
-						$this->SetValue('Wind', round((int)$data->DataByte3 *70/255*3.6, 1));
+						$this->SetValue('Wind', round((int)$data->DataByte3 * (70/255) * 3.6, 1));
 					}
 					switch($data->DataByte0) {
 						case "24":

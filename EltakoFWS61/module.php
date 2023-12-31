@@ -67,7 +67,7 @@
 	            case "165":
 					if($data->DataByte0 == "24" OR $data->DataByte0 == "26") { 
 						$this->SetValue('Dawn', (int)$data->DataByte3 * (1000/255));
-						$temp = ((int)$data->DataByte2 * (120/255))
+						$temp = ((int)$data->DataByte2 * (120/255));
 						if ($temp > 40) {
 							$temp = round(($temp - 40)*2)/2;
 							$this->SetValue('Temperature', $temp); 

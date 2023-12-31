@@ -1,0 +1,17 @@
+{
+	"translations": {
+		"de": { 
+			"DeviceID": "Geräte-ID",
+			"ReturnID": "Melde-ID",
+			"InstanceID": "InstanzID",
+			"Find free DeviceID": "Suche freie Geräte-ID",
+			"Find ReturnID": "Suche Melde-ID",
+			"apply": "übernehmen",
+			"please operate device": "Bitte Gerät bedienen",
+			"Action": "Aktion",
+			"teachin": "einlernen",
+			"1. fill in the DeviceID above": "1. Tragen Sie die Geräte-ID oben ein",
+			"2. press TEACHIN after activating the learnmode on your device": "2. Drücken Sie EINLERNEN, nachdem Sie das Gerät in den Lernmodus versetzt haben"
+		}
+	}
+}

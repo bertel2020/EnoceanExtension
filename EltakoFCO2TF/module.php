@@ -38,7 +38,7 @@
 			parent::ApplyChanges();
 
 			$this->RegisterVariableInteger('Humidity', $this->Translate('Humidity'), "~Humidity");
-			$this->RegisterVariableInteger('Concentration', $this->Translate('Concentration'), "~Occurence.CO2");
+			$this->RegisterVariableInteger('Concentration', $this->Translate('Concentration'), "~Occurrence.CO2");
 			$this->RegisterVariableFloat('Temperature', $this->Translate('Temperature'), "~Temperature.Room");
 
 			#	Filter setzen

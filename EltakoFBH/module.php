@@ -66,7 +66,7 @@
 			$this->SendDebug("Received", $JSONString, 0);
 			$data = json_decode($JSONString);
 
-			if($this->GetReturnID($data, array(165, 213)))return;
+			if($this->GetReturnID($data, 165))return;
 
 	        switch($data->Device) {
 	            case "165":

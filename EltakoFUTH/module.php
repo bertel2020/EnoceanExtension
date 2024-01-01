@@ -109,7 +109,7 @@
     	    switch($data->DeviceID) {
     	        case $ID1:
 					$this->SetValue('Temperature', round((255-(int)$data->DataByte1) * (40/255),1));
-					$this->SetValue('SetTemp', round((int)$data->DataByte1 *(40/256),0));
+					$this->SetValue('SetTemp', round((int)$data->DataByte2 *(40/255),0));
 					break;
     	        case $ID2:
 					$this->SetValue('Humidity', round((int)$data->DataByte2 *(100/250),0));

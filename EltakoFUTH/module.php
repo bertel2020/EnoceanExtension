@@ -88,7 +88,7 @@
 			$this->EnableAction("settemp");
 
 			#	Solltemp merken
-			$this->SetBuffer('settemp', $this->GetValue('settemp'));
+			$this->SetBuffer('SetTemp', $this->GetValue('settemp'));
 
 			#	Filter setzen
 			$this->SetFilter();
@@ -101,22 +101,19 @@
 			$this->SendDebug("Receive", $JSONString, 0);
     	   	$data = json_decode($JSONString);
 			$this->SetTimerInterval('UpdateTimer', 0); 
-			$ID = $this->GetID();
-			$ID2 = $this->GetID2();
 
-    	    if($this->GetReturnID($data, 165))return;
+    	    if($this->GetReturnID($data, array(165, 246)))return;
 
-			if($data->DeviceID == $ID1) {
-				$this->SetValue('temperature', round((255-($data->DataByte1))*(40/255));
-				$this->SetValue('settemp', round($data->DataByte2)*(40/256);
-			}
-			if($data->DeviceID == $ID2) {
-				$this->SetValue('humidity', ($data->DataByte2)*(100/250);
-			}
-			else {
-				throw new Exception("Invalid Ident");
-			}
-		}
+    	    // Byte0 > 112 = An, 80 = Aus; Setzt den Status anhand der Aktorrückmeldung
+    	    switch($data->DataByte0) {
+    	        case 112:
+    	        break;
+    	        case 80:
+    	        break;
+    	        default:
+    	            throw new Exception("Invalid Ident");
+    	    }      
+    	}
 
     	#================================================================================================
     	public function RequestAction($Ident, $Value)
@@ -134,6 +131,13 @@
     	            break;
     	        case "SetReturnID2":
     	            $this->UpdateFormField('ReturnID2', 'value', $Value);
+    	            break;
+    	        case "StatusVariable": //Schalten bei Änderung der Statusvariable 
+					if (($Value)) { 
+    	                $this->SwitchNormal(true);
+    	            }else {
+    	                $this->SwitchNormal(false);
+    	            }
     	            break;
     	        default:
     	            throw new Exception("Invalid Ident");

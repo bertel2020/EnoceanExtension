@@ -150,7 +150,7 @@
         public function SetTemp(int $temp)
 		#================================================================================================
 		{
-			$temp = dec2hex02($temp);
+			#$temp = dec2hex02($temp);
 			$data = json_decode($this->ReadPropertyString("BaseData"));
 			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
 			$data->DataByte3 = 00;

@@ -106,18 +106,17 @@
 
     	    if($this->GetReturnID($data, 165))return;
 
-    	    // Byte0 > 112 = An, 80 = Aus; Setzt den Status anhand der Aktorrückmeldung
-    	    switch($data->DeviceID) {
-    	        case $ID1:
-					$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255));
-					$this->SetValue('SetTemp', round($data->DataByte2)*(40/256);
-    	        break;
-    	        case $ID2:
-					$this->SetValue('Humidity', ($data->DataByte2)*(100/250);
-    	        break;
-    	        default:
-    	            throw new Exception("Invalid Ident");
-    	    }      
+
+			if($data->DeviceID == $ID1) {
+				$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255));
+				$this->SetValue('SetTemp', round($data->DataByte2)*(40/256);
+			}
+			if($data->DeviceID == $ID1) {
+				$this->SetValue('Humidity', ($data->DataByte2)*(100/250);
+			}
+			else {
+				throw new Exception("Invalid Ident");
+			}
     	}
 
     	#================================================================================================

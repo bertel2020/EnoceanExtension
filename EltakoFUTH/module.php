@@ -146,20 +146,6 @@
     	    }
     	}
 
-		#================================================================================================
-        public function SetTemp(int $temp)
-		#================================================================================================
-		{
-			#$temp = dec2hex02($temp);
-			$data = json_decode($this->ReadPropertyString("BaseData"));
-			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
-			$data->DataByte3 = 00;
-			$data->DataByte2 = $temp;
-			$data->DataByte1 = 00;
-			$data->DataByte0 = 08;
-			$this->SendData(json_encode($data));
-			return;
-        }
 
 		#================================================================================================
 		public function TeachIn() //Sendet ein TeachIn als "GFVS" an den FUTH

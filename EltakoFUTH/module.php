@@ -101,7 +101,7 @@
 			$this->SendDebug("Receive", $JSONString, 0);
     	   	$data = json_decode($JSONString);
 			$this->SetTimerInterval('UpdateTimer', 0); 
-			$ID = $this->GetID();
+			$ID1 = $this->GetID();
 			$ID2 = $this->GetID2();
 
 			if($this->GetReturnID($data, 165))return;

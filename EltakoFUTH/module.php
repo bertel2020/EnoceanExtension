@@ -46,6 +46,7 @@
 			#	Fehlende Profile erzeugen
 			if (!IPS_VariableProfileExists('FUTH.SetTemp.ENOEXT')) {
 				IPS_CreateVariableProfile('FUTH.SetTemp.ENOEXT', 1);
+				IPS_SetVariableProfileValues("FUTH.SetTemp.ENOEXT", 19, 24, 1);
 				IPS_SetVariableProfileIcon('FUTH.SetTemp.ENOEXT', '');
 				IPS_SetVariableProfileText('FUTH.SetTemp.ENOEXT', '', ' °C');
 			}
@@ -88,7 +89,7 @@
 			$this->EnableAction("SetTemp");
 
 			#	Solltemp merken
-			$this->SetBuffer('SetTemp', $this->GetValue('SetTemp'));
+			$this->SetBuffer('settemp', $this->GetValue('SetTemp'));
 
 			#	Filter setzen
 			$this->SetFilter();
@@ -137,17 +138,28 @@
     	        case "SetReturnID2":
     	            $this->UpdateFormField('ReturnID2', 'value', $Value);
     	            break;
-    	        case "StatusVariable": //Schalten bei Änderung der Statusvariable 
-					if (($Value)) { 
-    	                $this->SwitchNormal(true);
-    	            }else {
-    	                $this->SwitchNormal(false);
-    	            }
-    	            break;
+    	        case "SetTemp": 
+					$this->SetTemp($Value);
+                    break;
     	        default:
     	            throw new Exception("Invalid Ident");
     	    }
     	}
+
+		#================================================================================================
+        public function SetTemp(int $temp)
+		#================================================================================================
+		{
+			$temp = dec2hex02($temp);
+			$data = json_decode($this->ReadPropertyString("BaseData"));
+			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
+			$data->DataByte3 = 00;
+			$data->DataByte2 = $temp;
+			$data->DataByte1 = 00;
+			$data->DataByte0 = 08;
+			$this->SendData(json_encode($data));
+			return;
+        }
 
 		#================================================================================================
 		public function TeachIn() //Sendet ein TeachIn als "GFVS" an den FUTH
@@ -311,4 +323,13 @@
 			return($ID2);
 		}
 	
+		#=====================================================================================
+		private function dec2hex02($dec) 
+		#=====================================================================================
+		{
+			return sprintf("%02X", $dec);
+		}
+		
+
+
 	}

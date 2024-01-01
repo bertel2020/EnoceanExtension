@@ -3,9 +3,11 @@
 		"de": { 
 			"DeviceID": "Geräte-ID",
 			"ReturnID": "Melde-ID",
+			"ReturnID2": "Melde-ID2",
 			"InstanceID": "InstanzID",
 			"Find free DeviceID": "Suche freie Geräte-ID",
 			"Find ReturnID": "Suche Melde-ID",
+			"Find ReturnID2": "Suche Melde-ID2",
 			"apply": "übernehmen",
 			"please operate device": "Bitte Gerät bedienen",
 			"Action": "Aktion",

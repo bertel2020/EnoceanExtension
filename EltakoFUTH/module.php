@@ -106,15 +106,6 @@
 
     	    if($this->GetReturnID($data, array(165, 246)))return;
 
-    	    // Byte0 > 112 = An, 80 = Aus; Setzt den Status anhand der Aktorrückmeldung
-    	    switch($data->DataByte0) {
-    	        case 112:
-    	        break;
-    	        case 80:
-    	        break;
-    	        default:
-    	            throw new Exception("Invalid Ident");
-    	    }      
     	}
 
     	#================================================================================================

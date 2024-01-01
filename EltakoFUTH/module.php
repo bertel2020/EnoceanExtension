@@ -60,7 +60,7 @@
 			if (!IPS_VariableProfileExists('FUTH.Humidity.ENOEXT')) {
 				IPS_CreateVariableProfile('FUTH.Humidity.ENOEXT', 2);
 				IPS_SetVariableProfileIcon('FUTH.Humidity.ENOEXT', '');
-				IPS_SetVariableProfileDigits('FUTH.Humidity.ENOEXT', 1);
+				IPS_SetVariableProfileDigits('FUTH.Humidity.ENOEXT', 0);
 				IPS_SetVariableProfileText('FUTH.Humidity.ENOEXT', '', ' %');
 			}
 		}

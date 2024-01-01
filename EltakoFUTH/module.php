@@ -89,7 +89,7 @@
 			$this->EnableAction("SetTemp");
 
 			#	Solltemp merken
-			$this->SetBuffer('settemp', $this->GetValue('SetTemp'));
+			#$this->SetBuffer('settemp', $this->GetValue('SetTemp'));
 
 			#	Filter setzen
 			$this->SetFilter();

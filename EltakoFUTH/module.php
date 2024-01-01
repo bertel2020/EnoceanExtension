@@ -81,19 +81,19 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableInteger("SetTemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
-			$this->RegisterVariableFloat("Temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
-			$this->RegisterVariableFloat("Humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
+			$this->RegisterVariableInteger("settemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
+			$this->RegisterVariableFloat("temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
+			$this->RegisterVariableFloat("humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
 
-			$this->EnableAction("SetTemp");
+			$this->EnableAction("settemp");
 
 			#	Solltemp merken
-			$this->SetBuffer('SetTemp', $this->GetValue('settemp'));
+			$this->SetBuffer('settemp', $this->GetValue('settemp'));
 
 			#	Filter setzen
 			$this->SetFilter();
 		}
-'''
+
 		#================================================================================================
 		public function ReceiveData($JSONString) //Verarbeitet die Rückmeldung des Aktors
 		#================================================================================================
@@ -107,17 +107,17 @@
     	    if($this->GetReturnID($data, 165))return;
 
 			if($data->DeviceID == $ID1) {
-				$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255));
-				$this->SetValue('SetTemp', round($data->DataByte2)*(40/256);
+				$this->SetValue('temperature', round((255-($data->DataByte1))*(40/255));
+				$this->SetValue('settemp', round($data->DataByte2)*(40/256);
 			}
 			if($data->DeviceID == $ID2) {
-				$this->SetValue('Humidity', ($data->DataByte2)*(100/250);
+				$this->SetValue('humidity', ($data->DataByte2)*(100/250);
 			}
 			else {
 				throw new Exception("Invalid Ident");
 			}
 		}
-'''
+
     	#================================================================================================
     	public function RequestAction($Ident, $Value)
     	#================================================================================================

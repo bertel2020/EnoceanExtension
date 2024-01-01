@@ -81,7 +81,7 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableInteger("SetTemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
+			$this->RegisterVariableInteger("SetTemp", $this->Translate("Set Temp"), "FUTH.SetTemp.ENOEXT");
 			$this->RegisterVariableFloat("Temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
 			$this->RegisterVariableFloat("Humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
 

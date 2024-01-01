@@ -108,8 +108,8 @@
 
     	    switch($data->DeviceID) {
     	        case $ID1:
-					$this->SetValue('Temperature', round((255-(int)$data->DataByte2) * (2048/255),1));
-					$this->SetValue('SetTemp', (int)$data->DataByte3 * 0.02);
+					$this->SetValue('Temperature', round((255-(int)$data->DataByte1) * (2048/255),1));
+					$this->SetValue('SetTemp', (int)$data->DataByte1 *(40/256));
     	        case $ID2:
     	    	default:
     	            throw new Exception("Invalid Ident");

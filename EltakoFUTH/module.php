@@ -106,11 +106,11 @@
 
     	    if($this->GetReturnID($data, array(165, 246)))return;
     	    switch($data->DeviceID) {
-    	        case $ID1:
-					$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255)));
+    	        case 1:
+					$this->SetValue('Temperature', round(255-($data->DataByte1))*(40/255));
 					$this->SetValue('SetTemp', round($data->DataByte2)*(40/256));
     	        	break;
-    	        case $ID2:
+    	        case 2:
 					$this->SetValue('Humidity', ($data->DataByte2)*(100/250>));
     	        	break;
     	    	default:

@@ -101,12 +101,12 @@
 			$this->SendDebug("Receive", $JSONString, 0);
     	   	$data = json_decode($JSONString);
 			$this->SetTimerInterval('UpdateTimer', 0); 
-			$ID = $this->GetID();
-			$ID2 = $this->GetID2();
+			#$ID = $this->GetID();
+			#$ID2 = $this->GetID2();
 
     	    if($this->GetReturnID($data, 165))return;
 
-
+'''
 			if($data->DeviceID == $ID1) {
 				$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255));
 				$this->SetValue('SetTemp', round($data->DataByte2)*(40/256);
@@ -117,7 +117,8 @@
 			else {
 				throw new Exception("Invalid Ident");
 			}
-    	}
+'''
+		}
 
     	#================================================================================================
     	public function RequestAction($Ident, $Value)

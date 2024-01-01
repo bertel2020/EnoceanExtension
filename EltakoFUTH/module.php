@@ -104,7 +104,7 @@
 			$ID = $this->GetID();
 			$ID2 = $this->GetID2();
 
-			if($this->GetReturnID($data, array(165, 246)))return;
+			if($this->GetReturnID($data, 165))return;
 
     	    switch($data->DeviceID) {
     	        case $ID1:

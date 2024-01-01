@@ -111,7 +111,7 @@
 					$this->SetValue('Temperature', round((255-(int)$data->DataByte1) * (2048/255),1));
 					$this->SetValue('SetTemp', (int)$data->DataByte1 *(40/256));
     	        case $ID2:
-					$this->SetValue('Humidity', (int)$data->DataByte2 **(100/250));
+					$this->SetValue('Humidity', (int)$data->DataByte2 *(100/250));
     	    	default:
     	            throw new Exception("Invalid Ident");
     	    }      

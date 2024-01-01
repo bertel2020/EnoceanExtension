@@ -81,11 +81,11 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableInteger("settemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
-			$this->RegisterVariableFloat("temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
-			$this->RegisterVariableFloat("humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
+			$this->RegisterVariableInteger("SetTemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
+			$this->RegisterVariableFloat("Temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
+			$this->RegisterVariableFloat("Humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
 
-			$this->EnableAction("settemp");
+			$this->EnableAction("SetTemp");
 
 			#	Solltemp merken
 			$this->SetBuffer('SetTemp', $this->GetValue('settemp'));
@@ -101,14 +101,19 @@
 			$this->SendDebug("Receive", $JSONString, 0);
     	   	$data = json_decode($JSONString);
 			$this->SetTimerInterval('UpdateTimer', 0); 
+			$ID = $this->GetID();
+			$ID2 = $this->GetID2();
 
-    	    if($this->GetReturnID($data, array(165, 246)))return;
+    	    if($this->GetReturnID($data, 165))return;
 
     	    // Byte0 > 112 = An, 80 = Aus; Setzt den Status anhand der Aktorrückmeldung
-    	    switch($data->DataByte0) {
-    	        case 112:
+    	    switch($data->DeviceID) {
+    	        case $ID1:
+					$this->SetValue('Temperature', round((255-($data->DataByte1))*(40/255));
+					$this->SetValue('SetTemp', round($data->DataByte2)*(40/256);
     	        break;
-    	        case 80:
+    	        case $ID2:
+					$this->SetValue('Humidity', ($data->DataByte2)*(100/250);
     	        break;
     	        default:
     	            throw new Exception("Invalid Ident");

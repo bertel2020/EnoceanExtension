@@ -81,14 +81,14 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableInteger("settemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
-			$this->RegisterVariableFloat("temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
-			$this->RegisterVariableFloat("humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
+			$this->RegisterVariableInteger("SetTemp", $this->Translate("SetTemp"), "FUTH.SetTemp.ENOEXT");
+			$this->RegisterVariableFloat("Temperature", $this->Translate("Temperature"), "FUTH.Temp.ENOEXT");
+			$this->RegisterVariableFloat("Humidity", $this->Translate("Humidity"), "FUTH.Humidity.ENOEXT");
 
-			$this->EnableAction("settemp");
+			$this->EnableAction("SetTemp");
 
 			#	Solltemp merken
-			$this->SetBuffer('SetTemp', $this->GetValue('settemp'));
+			$this->SetBuffer('SetTemp', $this->GetValue('SetTemp'));
 
 			#	Filter setzen
 			$this->SetFilter();

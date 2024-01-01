@@ -150,7 +150,7 @@
         public function SetTempFUTH(int $temp)
 		#================================================================================================
 		{
-			#$temp = dec2hex02($temp);
+			$temp = round($temp/(40/255),0);
 			$data = json_decode($this->ReadPropertyString("BaseData"));
 			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
 			$data->DataByte3 = 0;
@@ -324,11 +324,4 @@
 			return($ID2);
 		}
 	
-		#=====================================================================================
-		private function dec2hex02($dec) 
-		#=====================================================================================
-		{
-			return sprintf("%02X", $dec);
-		}		
-
 	}

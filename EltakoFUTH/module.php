@@ -146,6 +146,20 @@
     	    }
     	}
 
+		#================================================================================================
+        public function SetTempFUTH($temp)
+		#================================================================================================
+		{
+			#$temp = dec2hex02($temp);
+			$data = json_decode($this->ReadPropertyString("BaseData"));
+			$data->DeviceID = $this->ReadPropertyInteger("DeviceID");
+			$data->DataByte3 = 0;
+			$data->DataByte2 = $temp;
+			$data->DataByte1 = 0;
+			$data->DataByte0 = 8;
+			$this->SendData(json_encode($data));
+			return;
+        }
 
 
 		#================================================================================================

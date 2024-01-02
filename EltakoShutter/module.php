@@ -108,7 +108,7 @@
 				$this->UnRegisterVariable("slatangle");
 				$this->UpdateFormField("TurnWithoutTravel", "visible", false);
 			}
-			if($this->ReadPropertyBoolean("State") == true){
+			if($this->ReadPropertyBoolean("EnableState") == true){
 				$this->RegisterVariableString("state", $this->Translate("State"), "");
 			}else{
 				$this->UnRegisterVariable("State");

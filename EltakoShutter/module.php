@@ -112,7 +112,7 @@
 			if($this->ReadPropertyBoolean("EnableState") == true){
 				$this->RegisterVariableString("state", $this->Translate("State"), "");
 			}else{
-				$this->UnRegisterVariable("State");
+				$this->UnRegisterVariable("state");
 			}
 			#	Position merken
 			$this->SetBuffer('Position', $this->GetValue('position'));

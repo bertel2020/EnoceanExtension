@@ -15,6 +15,7 @@
 			$this->RegisterPropertyFloat("StepTime", 0.1);
 			$this->RegisterPropertyFloat("SlatTurnTime", 0.0);
 			$this->RegisterPropertyBoolean("TurnWithoutTravel", false);
+			$this->RegisterPropertyBoolean("EnableState", true);
 			$this->SetBuffer("Calibrate", "false");
 
 			$this->RegisterPropertyString("BaseData", '{

@@ -54,14 +54,18 @@
 				IPS_CreateVariableProfile('ShutterMoveStop.ENOEXT', 1);
 				IPS_SetVariableProfileIcon('ShutterMoveStop.ENOEXT', 'Shutter');
 				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', -2, '<<', '',0xFF9900);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', -1, '<', '',0xFF9900);
 				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 0, 'o', '',0xF60909);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 1, '>', '',0xFF9900);
 				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 2, '>>', '',0xFF9900);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 25, '25', '',-1);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 50, '50', '',-1);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 75, '75', '',-1);
-				IPS_SetVariableProfileAssociation('ShutterMoveStop.ENOEXT', 98, '98', '',-1);
+			}
+
+			if (!IPS_VariableProfileExists('ShutterMoveStopBlinds.ENOEXT')) {
+				IPS_CreateVariableProfile('ShutterMoveStopBlinds.ENOEXT', 1);
+				IPS_SetVariableProfileIcon('ShutterMoveStopBlinds.ENOEXT', 'Shutter');
+				IPS_SetVariableProfileAssociation('ShutterMoveStopBlinds.ENOEXT', -2, '<<', '',0xFF9900);
+				IPS_SetVariableProfileAssociation('ShutterMoveStopBlinds.ENOEXT', -1, '<', '',0xFF9900);
+				IPS_SetVariableProfileAssociation('ShutterMoveStopBlinds.ENOEXT', 0, 'o', '',0xF60909);
+				IPS_SetVariableProfileAssociation('ShutterMoveStopBlinds.ENOEXT', 1, '>', '',0xFF9900);
+				IPS_SetVariableProfileAssociation('ShutterMoveStopBlinds.ENOEXT', 2, '>>', '',0xFF9900);
 			}
 
 			if (!IPS_VariableProfileExists('ShutterMoveTime.ENOEXT')) {
@@ -88,23 +92,27 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-			$this->RegisterVariableInteger("action", $this->Translate("Action"), "ShutterMoveStop.ENOEXT");
 			$this->RegisterVariableInteger("position", $this->Translate("Position"), "~Shutter");
 			$this->RegisterVariableFloat("movetime", $this->Translate("Travel time"), "ShutterMoveTime.ENOEXT");
-			$this->RegisterVariableString("state", $this->Translate("State"), "");
 
 			$this->EnableAction("action");
 			$this->EnableAction("position");
 
 			if($this->ReadPropertyFloat("SlatTurnTime") > 0){
+				$this->RegisterVariableInteger("action", $this->Translate("Action"), "ShutterMoveStopBlinds.ENOEXT");
 				$this->RegisterVariableInteger("slatangle", $this->Translate("Slat Angle"), "~Intensity.100");
 				$this->EnableAction("slatangle");
 				$this->UpdateFormField("TurnWithoutTravel", "visible", true);
 			}else{
+				$this->RegisterVariableInteger("action", $this->Translate("Action"), "ShutterMoveStop.ENOEXT");
 				$this->UnRegisterVariable("slatangle");
 				$this->UpdateFormField("TurnWithoutTravel", "visible", false);
 			}
-
+			if($this->ReadPropertyBoolean("State") == true){
+				$this->RegisterVariableString("state", $this->Translate("State"), "");
+			}else{
+				$this->UnRegisterVariable("State");
+			}
 			#	Position merken
 			$this->SetBuffer('Position', $this->GetValue('position'));
 

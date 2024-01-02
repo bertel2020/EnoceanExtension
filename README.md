@@ -1,5 +1,8 @@
 # EnoceanExtension
 
+Diese Module erweitern die Unterstützung von Eltako Enocean Aktoren und Sensoren in Symcon. Die Inspiration und das Grundgerüst dafür kommt von der Library "MoreEnoceanFeatures" von Silberstreifen (https://github.com/nefiertsrebliS/MoreEnoceanFeatures), vielen Dank für die tolle Arbeit.
+
+
 Folgende Module beinhaltet das EnoceanExtension Repository:
 
 

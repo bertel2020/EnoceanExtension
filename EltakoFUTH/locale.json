@@ -2,12 +2,12 @@
 	"translations": {
 		"de": { 
 			"DeviceID": "Geräte-ID",
-			"ReturnID": "Melde-ID",
-			"ReturnID2": "Melde-ID2",
+			"ReturnID": "Melde-ID - Temperatur",
+			"ReturnID2": "Melde-ID - Feuchtigkeit",
 			"InstanceID": "InstanzID",
 			"Find free DeviceID": "Suche freie Geräte-ID",
-			"Find ReturnID": "Suche Melde-ID",
-			"Find ReturnID2": "Suche Melde-ID2",
+			"Find ReturnID": "Suche Melde-ID - Temperatur",
+			"Find ReturnID2": "Suche Melde-ID - Feuchtigkeit",
 			"apply": "übernehmen",
 			"please operate device": "Bitte Gerät bedienen",
 			"Action": "Aktion",

@@ -119,7 +119,8 @@
 					}
 				}
 			]
-		}
+		},
+		{ "type": "Label", "caption": "The Eltako FUTH devices have of two ID's. One for the temperature sensor and control, a second one for humidity sensor." }
 	],
     "actions":
     [

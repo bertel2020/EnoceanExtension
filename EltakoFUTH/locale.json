@@ -15,6 +15,7 @@
 			"Humidity": "Luftfeuchtigkeit",
 			"Set Temp": "Soll Temp",
 			"Temperature": "Temperatur",
+			"The Eltako FUTH devices have of two ID's. One for the temperature sensor and control, a second one for humidity sensor.": "Die Eltako FUTH Geräte haben zwei ID's. Eine für Tempatur-Sensor und Steuerung, und eine für den Feuchtigskeits-Sensor."
 			"1. fill in the DeviceID above": "1. Tragen Sie die Geräte-ID oben ein",
 			"2. press TEACHIN after activating the learnmode on your device": "2. Drücken Sie EINLERNEN, nachdem Sie das Gerät in den Lernmodus versetzt haben"
 		}

@@ -56,7 +56,7 @@
 
 	        switch($data->Device) {
 	            case "165":
-					$this->SetValue('Illumination', round((int)$data->DataByte2 * (2048/255)),0);
+					$this->SetValue('Illumination', round((int)$data->DataByte2 * (2048/255),0));
 					$this->SetValue('BatteryVoltage', (int)$data->DataByte3 * 0.02);
 					switch($data->DataByte0) {
 						case 13:
